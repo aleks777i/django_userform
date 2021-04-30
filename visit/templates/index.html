@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>User database contains {{ users.count }} user{{ users.count|pluralize }}</h2>
+<h2>User database contains {{ users.count }} user{{ users.count|pluralize }}:</h2>
 <br>
-<ul>
+<ol>
 	{% for user in users %}
 	<li>ID: {{ user.id }}<br>
 		Username:  <a href="{% url 'visit:detail' user.id %}">{{user.name}}</a><br>
 		E-mail: {{user.email}}
 	</li><br>
 	{% endfor %}
-</ul>
+</ol>
 {% endblock %} 

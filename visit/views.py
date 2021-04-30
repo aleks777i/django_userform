@@ -2,12 +2,13 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Visit
 from .forms import UserForm
 from django.http import HttpResponse
+from datetime import datetime
 
 
 def home(request):
     users = Visit.objects.all()  # list of objects
     context = {
-        "users": users
+        "users": users,
     }
     return render(request, 'index.html', context)
 
